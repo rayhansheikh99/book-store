@@ -15,23 +15,22 @@
 <body>
      <h1 id="search" class="text-center text-success">Search Your Favorite Book</h1>
     <div class="text-center mb-5 mt-5">
-    <input id="search-field" class="w-25" type="text"><button  onclick="searchDrinks()" id="search-btn">Search</button>
+    <input id="search-field" class="w-25" type="text"><button  onclick="searchBook()" id="search-btn">Search</button>
     </div>
 
     <section class="container">
-        <!-- <div>
-            <h1 class="text-center">Drinks Details</h1>
-            <div class="border border-3 p-3" id='drinks-details'>
-                
-            </div> -->
+        <div id="total-search">
         </div>
+        <div id="error"></div>
     </section>
     <section class="container mt-5">
-        <!-- <div class="text-center" id="spinner">
+        <div class="text-center" id="spinner">
         <div class="text-primary spinner-border " role="status">
           </div>
-        </div> -->
+        </div>
         <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+            
+
     
         </div>
     </section>

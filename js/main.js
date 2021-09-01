@@ -16,29 +16,31 @@ toggleSpinner('none')
 
 const searchBook = () => {
     const searchText = searchField.value;
-    if (search === "") {
+    if (searchText === "") {
         errorDiv.innerText = "Search field cannot be empty.";
+        searchResult.textContent = '';
+        totalSearch.innerText = '';
         return;
       }
-    const url = `http://openlibrary.org/search.json?q=${searchText}`;
-    fetch(url)
-    .then(res => res.json())
-    .then(data => displayBooks(data.docs))
-    toggleSpinner('block')
-    toggleSearch('none')
-    searchField.value = '';
-    totalSearch.innerText = '';
+      else{
+        const url = `http://openlibrary.org/search.json?q=${searchText}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => displayBooks(data.docs))
+        toggleSpinner('block')
+        toggleSearch('none')
+        searchField.value = '';
+        totalSearch.innerText = '';
+      }
+  
+   
     
 }
 
 const displayBooks = bookList => {
     searchResult.textContent = '';
-    if (!bookList) {
-        console.log('notgg')
-    //     errorDiv.innerText = "NO Result Found";
-    //   } else {
-    //     errorDiv.innerText = "";
-      }
+    errorDiv.innerText = '';
+    
     const books = bookList.slice(0, 15);
     totalSearch.innerHTML = `<h5>Total Search Founds ${books.length}</h5>`;
     books.forEach(book => {

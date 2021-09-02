@@ -46,7 +46,7 @@ const displayBooks = bookList => {
     errorDiv.innerText = '';
 
     const books = bookList.slice(0, 12);
-    totalSearch.innerText = `Total Search Books Founds ${books.length}`;
+    totalSearch.innerText = `Total Search Books Found ${books.length}`;
     if(books.length === 0){
         notFound.innerText = 'Search Books Not Found';
     }

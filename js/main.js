@@ -22,6 +22,7 @@ const searchBook = () => {
         errorDiv.innerText = "Search field can not be empty.";
         searchResult.textContent = '';
         totalSearch.innerText = '';
+        notFound.innerText = '';
         return;
       }
       else{
